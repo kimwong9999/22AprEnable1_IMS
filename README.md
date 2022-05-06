@@ -2,6 +2,7 @@ Coverage: 34%
 # Project Title
 
 Inventory Management System
+
 An application that an end user can interact with via a CLI, involves creating three tables (Customer, order, Items) allowing the user to read, add, update and delete records from these tables
 
 ## Getting Started
