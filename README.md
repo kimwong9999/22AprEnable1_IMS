@@ -67,32 +67,40 @@ READ - to choose the id to be deleted
 DELETE - to delete the row using the id
 READ - to check that the record has been deleted
 
+JUNIT - Mokita
+
+Created a test file itemDAOTest.java based on the customerDAOTest.java and ran it, all test passed succefully 
+
 ### Integration Tests 
-Explain what these tests test, why and how to run them
 
-```
-Give an example
-```
+The order file, as this required the customers and items table
 
-### And coding style tests
+These two tests were done manually
 
-Explain what these tests test and why
+1. Delete the customers or/and the items table. This should not be possible as the orders table has foreign keys from those two tables.
+2. Delete a customer that can be found on the orders table, should refuse to do this
+3. Delete an item that can be fouind on the order table, should refuse this
+4. Add a row to the orders table that has an invalid customer id (or an invalid items id) and it should refuse to add them
 
-```
-Give an example
-```
+The second one was done manually because the program was written so that the user could only choose a valid customer (or item) id.
 
-## Deployment
+Using the program when selected ORDERS
 
-Add additional notes about how to deploy this on a live system
+1. add a row using CREATE and then use READ to look at the row
+2. change the customer using the UPDATE - 'c' option and then use READ to check the data
+3. change the item using the UPDATE - 'i' option and then use READ to check the data
+4. change the date using the UPDATE - 'd' option and then use READ to check the data
+5. change the total using the UPDATE - 't' option and then use READ to check the data
 
-## Built With
+Using the program when selected ITEMS
 
-* [Maven](https://maven.apache.org/) - Dependency Management
+	try to delete an item from the items table that is on the orders table - will refuse to do this
 
-## Versioning
+Using the program when selected CUISTOMERS
 
-We use [SemVer](http://semver.org/) for versioning.
+	try to delete a customer from the customers table that is on the orders table - will refuse to do this
+
+
 
 ## Authors
 
