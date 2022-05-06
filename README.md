@@ -10,7 +10,7 @@ We were supplied a repository which we forked into our own databases. This held 
 
 ### Prerequisites
 
-A PC. A git Hub account, Eclipse, Java, MySQL, a Jira account.
+A PC. A git Hub account, Eclipse, Java, MySQL.
 
 ### Installing
 
@@ -26,14 +26,14 @@ Once Eclipse has been downloaded to the PC, when running for the first time it w
 
 As the Customer file and the software to manupilate the table already existes then all that needed to be done is the items and orders table. In the case of the items table all that needed was to copy the existing customer files (Customer.java, CustomerDAO.java and CustomerContoller.java) and change Customer to Items int the file names and code (making sure that things like 'customer' was changed to 'items' and not 'Items'. Then it was a matter of replacing all references to the customer columns to the item columns, making sure that the data type matched i.e 
 
-for example part of the customerDAO.java looked lied this
+for example part of the customerDAO.java looked like this
 
 						.prepareStatement("INSERT INTO customers(first_name, surname) VALUES (?, ?)");) {
 			statement.setString(1, customer.getFirstName());
 			statement.setString(2, customer.getSurname());
-      statement.executeUpdate();
+      			statement.executeUpdate();
       
- so for the itemsDAO file it would need to be changed into this
+ so for the itemsDAO file it needed to be changed into this
  
  						.prepareStatement("INSERT INTO items (name, descr, price, stock) VALUES (?, ?, ?, ?)");) {
 			statement.setString(1, item.getName());
@@ -69,11 +69,11 @@ READ - to check that the record has been deleted
 
 JUNIT - Mokita
 
-Created a test file itemDAOTest.java based on the customerDAOTest.java and ran it, all test passed succefully 
+Created a test file itemDAOTest.java based on the customerDAOTest.java and ran it, all test passed succesfully 
 
 ### Integration Tests 
 
-The order file, as this required the customers and items table
+These mainly concerned order file, as this required the customers and items table
 
 These two tests were done manually
 
@@ -87,8 +87,10 @@ Using the program when selected ORDERS
 1. add a row using CREATE and then use READ to look at the row
 2. change the customer using the UPDATE - 'c' option and then use READ to check the data
 3. change the item using the UPDATE - 'i' option and then use READ to check the data
-4. change the date using the UPDATE - 'd' option and then use READ to check the data
+4. change the date using the UPDATE - 'd' option and enter a valid date then use READ to check the data
 5. change the total using the UPDATE - 't' option and then use READ to check the data
+6. change the date using the UPDATE - 'd' option and enter an invalid date - program will stop and display an error message
+7. change the total using the UPDATE - 't' option and enter an invalid value for the total (non numeric) - program will stop and display an error message
 
 Using the program when selected ITEMS
 
