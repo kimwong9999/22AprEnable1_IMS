@@ -78,9 +78,7 @@ The order file, as this required the customers and items table
 These two tests were done manually
 
 1. Delete the customers or/and the items table. This should not be possible as the orders table has foreign keys from those two tables.
-2. Delete a customer that can be found on the orders table, should refuse to do this
-3. Delete an item that can be fouind on the order table, should refuse this
-4. Add a row to the orders table that has an invalid customer id (or an invalid items id) and it should refuse to add them
+2. Add a row to the orders table that has an invalid customer id (or an invalid items id) and it should refuse to add them
 
 The second one was done manually because the program was written so that the user could only choose a valid customer (or item) id.
 
@@ -108,14 +106,3 @@ Kim Wong
 Git Hub: https://github.com/kimwong9999/22AprEnable1_IMS   
 Jira: https://kimwong.atlassian.net/
 
-## License
-
-This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
-
-*For help in [Choosing a license](https://choosealicense.com/)*
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
